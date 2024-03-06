@@ -1,9 +1,17 @@
 import 'package:bookshop_project/screen/splash.dart';
+import 'package:bookshop_project/utils/authentication/auth_repo.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp()
+      .then((value) => Get.put(AuthenticationRepository(),),);
   runApp(const MyApp());
 }
+
+final navigatorKey = GlobalKey<NavigatorState>();
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

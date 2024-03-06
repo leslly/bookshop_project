@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570579557528",
+    "project_id": "bookshop-project-d621a",
+    "storage_bucket": "bookshop-project-d621a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570579557528:android:f45c33edb32e66751884ed",
+        "android_client_info": {
+          "package_name": "com.example.bookshop_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS8KxUtlg2TpYeaCvvyw_AARA9fKgYXOs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
