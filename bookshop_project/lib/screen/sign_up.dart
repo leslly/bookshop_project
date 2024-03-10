@@ -2,7 +2,6 @@ import 'package:bookshop_project/utils/controllers.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../utils/text_form_global.dart';
 
@@ -30,7 +29,7 @@ class SignUpPage extends StatelessWidget {
                      'assets/images/logo_two.png',
                      fit: BoxFit.contain,
                    ),
-                   SizedBox(height: 41),
+                   const SizedBox(height: 41),
                   // NAME CONTROLLER
                   const SizedBox(height: 16),
                   TextFormGlobal(

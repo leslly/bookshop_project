@@ -4,7 +4,7 @@ import 'global_colors.dart';
 
 
 class TextFormGlobal extends StatelessWidget {
-  TextFormGlobal({Key? key,
+  const TextFormGlobal({Key? key,
     this.height = 55,
     this.icon,
     required this.controller,
@@ -26,9 +26,9 @@ class TextFormGlobal extends StatelessWidget {
   final double width;//width
   final IconData? icon;
   final double height;
-  var validator;
-  var autovalidatemode;
-  var textinputaction;
+  final dynamic validator;
+  final AutovalidateMode autovalidatemode;
+  final TextInputAction textinputaction;
 
 
   @override
