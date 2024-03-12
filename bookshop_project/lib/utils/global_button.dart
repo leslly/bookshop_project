@@ -18,10 +18,10 @@ class GlobalButton extends StatelessWidget {
       onTap: nextPage,
       child: Container(
         alignment: Alignment.center,
-        height: 56,
-        width: 311,
+        height: 34,
+        width: 195,
         decoration:  BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.circular(60),
           color: colorOfButton,
           border: Border.all(width: 1, color: GlobalColors.whiteTextColor),
         ),
@@ -29,8 +29,7 @@ class GlobalButton extends StatelessWidget {
           text,
           style: TextStyle(
             fontSize: fontSize,
-            fontFamily: 'assets/blush_images/Rubik/Rubik-Medium.ttf',
-            fontWeight: FontWeight.bold,
+            // fontWeight: FontWeight.bold,
             color: colorOfText,
           ),
         ),

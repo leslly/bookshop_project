@@ -36,7 +36,7 @@ class TextFormGlobal extends StatelessWidget {
     return Container( // this is the container for the email
       height: height,
       width: width,
-      padding: const EdgeInsets.only(top: 3, left: 15, bottom: 0, right: 15),
+      padding: const EdgeInsets.only(left: 15, top: 0, bottom: 5, right: 10),
       decoration: BoxDecoration(
         border: Border.all(width: 1, color: Colors.grey),
         color: GlobalColors.whiteTextColor,
@@ -56,6 +56,7 @@ class TextFormGlobal extends StatelessWidget {
           contentPadding: const EdgeInsets.all(0),
           hintStyle: TextStyle(
             height: 1,
+            fontSize: 13,
             color: GlobalColors.smallTextColorGrey,
           ),
           suffixIcon: icon != null ? Icon(icon, color: Colors.black): null,

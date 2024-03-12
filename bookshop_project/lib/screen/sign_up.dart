@@ -1,4 +1,8 @@
+import 'package:bookshop_project/screen/dashboard.dart';
+import 'package:bookshop_project/screen/login_page.dart';
 import 'package:bookshop_project/utils/controllers.dart';
+import 'package:bookshop_project/utils/global_button.dart';
+import 'package:bookshop_project/utils/global_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,10 +41,10 @@ class SignUpPage extends StatelessWidget {
                     text: 'Name',
                     textInputType: TextInputType.text,
                     obscure: false,
-                    icon: null,
-                    radius: 12,
-                    height: 53,
-                    width: 343,
+                    icon: CupertinoIcons.clear_circled,
+                    radius: 270,
+                    height: 40,
+                    width: 190,
                   ),
                   // EMAIL CONTROLLER
                   const SizedBox(height: 16),
@@ -49,10 +53,10 @@ class SignUpPage extends StatelessWidget {
                     text: 'Email',
                     textInputType: TextInputType.emailAddress,
                     obscure: false,
-                    icon: null,
-                    radius: 12,
-                    height: 53,
-                    width: 343,
+                    icon: CupertinoIcons.clear_circled,
+                    radius: 270,
+                    height: 40,
+                    width: 190,
                   ),
                   // PASSWORD CONTROLLER
                   const SizedBox(height: 16),
@@ -62,11 +66,63 @@ class SignUpPage extends StatelessWidget {
                     textInputType: TextInputType.text,
                     obscure: true,
                     icon: CupertinoIcons.eye_slash,
-                    radius: 12,
-                    height: 53,
-                    width: 343,
+                    radius: 270,
+                    height: 40,
+                    width: 190,
                   ),
                   const SizedBox(height: 16),
+                    // GlobalButton(
+                    // colorOfText: Colors.white,
+                    // colorOfButton: GlobalColors.linearPurple,
+                    // nextPage:Dashboard
+                    // )
+                InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Dashboard()));
+                  },
+                  child: Container(
+                  alignment: Alignment.center,
+                          height: 28,
+                          width: 190,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(45),
+                      border: Border.all(color: GlobalColors.whiteTextColor),
+                      color: const Color(0xff5B5D8B),
+                    ),
+                    child: const Text(
+                      'create account',
+                      style: TextStyle(
+                          color: Color(0xffFFFFFF),
+                          fontSize: 13,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Row(
+mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                const Text(
+                'Already have an account ? ',
+                style: TextStyle(
+                color: Colors.black,
+                fontSize: 13,
+                ),
+),
+              InkWell(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+              },
+              child: const Text(
+                'Log In',
+                style: TextStyle(
+                  fontSize:13,
+                  color: Colors.blue,
+                ),
+              ),
+              )
+              ],
+)
                 ],
               ),
             ),
