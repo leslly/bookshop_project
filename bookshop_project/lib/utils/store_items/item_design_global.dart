@@ -22,17 +22,27 @@ class ItemDesign extends StatelessWidget {
         callback(item);
       },
       child: Container(
-        padding: const EdgeInsets.all(10.5),
-        width: 160,
-        height: 257,
+       // width: 160,
+       // height: 400,
+        decoration: BoxDecoration(
+color: Colors.lightBlueAccent,
+        border: Border.all(
+        color: Colors.black,width:2,
+        style:BorderStyle.solid,
+        )
+        ),
         child: Column(
           children: [
-            //image
+            //IMAGE
             Container(
-              height: 203,
+              //height: 203,
               width: 160,
               decoration: BoxDecoration(
-                borderRadius:  BorderRadius.circular(17)
+                borderRadius:  BorderRadius.circular(17),
+                border: Border.all(
+        color: Colors.black,width:2,
+        style:BorderStyle.solid,
+        )
               ),
               child: Image.asset(
                         item.image,
@@ -40,6 +50,7 @@ class ItemDesign extends StatelessWidget {
                       ),
             ),
             const SizedBox(height: 13,),
+            //TITLE
                   Text(
                     item.title,
                     style: const TextStyle(
@@ -49,6 +60,7 @@ class ItemDesign extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 14),
+                  //PRICE
                   Text(
                           '\u20a6${item.price.toStringAsFixed(2)}',
                           style: const TextStyle(

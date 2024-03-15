@@ -24,6 +24,34 @@ class IndexProvider extends ChangeNotifier {
         description: "Intro to mobile interface design",
         image: 'assets/images/item.png',
     ),
+Item(
+      itemId: 5,
+        price:  150.00,
+        title: 'Book',
+        description: "Intro to mobile interface design",
+        image: 'assets/images/item.png',
+    ),
+    Item(
+      itemId: 6,
+        price:  150.00,
+        title: 'Book',
+        description: "Intro to mobile interface design",
+        image: 'assets/images/item.png',
+    ),
+    Item(
+      itemId: 7,
+        price:  150.00,
+        title: 'Book',
+        description: "Intro to mobile interface design",
+        image: 'assets/images/item.png',
+    ),
+    Item(
+      itemId: 8,
+        price:  150.00,
+        title: 'Book',
+        description: "Intro to mobile interface design",
+        image: 'assets/images/item.png',
+    ),
   ];
 
   // List<Course>  _courses = _maincourses;

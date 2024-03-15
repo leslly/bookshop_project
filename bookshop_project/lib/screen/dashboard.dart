@@ -177,8 +177,12 @@ class _DashboardState extends State<Dashboard> {
                         //   ),
 
                   GridView.builder(
+                    shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+                    //padding: const EdgeInsets.only(bottom: 100),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 115, crossAxisSpacing: 10),
+// crossAxisSpacing -Gives space between the two columns
+// due to somepadding whom i don'tknow where is, there is already space betwwen them
                     itemBuilder: (context, index){
                                 final item = items[index];
                                 return ItemDesign(item: item, callback: (item){
