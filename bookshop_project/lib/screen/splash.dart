@@ -1,7 +1,6 @@
 
 import 'package:bookshop_project/screen/login_page.dart';
 import 'package:bookshop_project/screen/sign_up.dart';
-import 'package:bookshop_project/utils/global_button.dart';
 import 'package:flutter/material.dart';
 import 'package:bookshop_project/utils/global_colors.dart';
 class SplashScreen extends StatefulWidget {
@@ -53,7 +52,7 @@ class _SplashScreenState extends State<SplashScreen> {
                //GlobalButton(colorOfText: GlobalColors.linearPurple, colorOfButton: GlobalColors.buttonColorwhite, nextPage: SignUpPage);
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpPage()));
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -76,7 +75,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ///// LOGIN TO ACCOUNT
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
                   },
                   child: Container(
                   alignment: Alignment.center,

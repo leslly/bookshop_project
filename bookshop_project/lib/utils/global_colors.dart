@@ -6,10 +6,10 @@ class GlobalColors {
 
   static HexColor linearPurple = HexColor('8983CC');
   static HexColor linearPurpleTwo = HexColor('2E2C9C');
-  static HexColor smallTextColorGrey = HexColor('78746D');
-  static HexColor buttonColorOrange = HexColor('E3562A');
+  static HexColor smallTextColorGrey = HexColor('F3F3F3');
+  static HexColor buttonColorPurple = HexColor('4A489A');
   static HexColor whiteTextColor = HexColor('FFFFFF');
-  static HexColor profileBackground = HexColor('F8F2EE');
+  static HexColor textPurple = HexColor('5747BA');
   static HexColor profileBorder = HexColor('65AAEA');
   static HexColor buttonColorwhite = HexColor('FFFFFF');
   static HexColor favorite = HexColor('FF4D4A');

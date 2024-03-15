@@ -1,7 +1,5 @@
-import 'package:bookshop_project/screen/dashboard.dart';
 import 'package:bookshop_project/screen/login_page.dart';
 import 'package:bookshop_project/utils/controllers.dart';
-import 'package:bookshop_project/utils/global_button.dart';
 import 'package:bookshop_project/utils/global_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +8,16 @@ import 'package:get/get.dart';
 import '../utils/text_form_global.dart';
 
 class SignUpPage extends StatelessWidget {
+
+
+
   const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    final controller = Get.put(SignUpController());
+final controller = Get.put(SignUpController());
     final formKey = GlobalKey<FormState>();
+
 
     return Scaffold(
       body: SafeArea(
@@ -29,11 +30,11 @@ class SignUpPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   Image.asset(
-                     'assets/images/logo_two.png',
-                     fit: BoxFit.contain,
-                   ),
-                   const SizedBox(height: 41),
+                  Image.asset(
+                    'assets/images/logo_two.png',
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 41),
                   // NAME CONTROLLER
                   const SizedBox(height: 16),
                   TextFormGlobal(
@@ -78,7 +79,11 @@ class SignUpPage extends StatelessWidget {
                     // )
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Dashboard()));
+                    if(formKey.currentState!.validate()){
+                        SignUpController.instance.registerUser(controller.email.text.trim(),
+                        controller.password.text.trim());
+                         // Actually signs up but does not re route to home page
+                      }
                   },
                   child: Container(
                   alignment: Alignment.center,
@@ -111,7 +116,7 @@ mainAxisAlignment: MainAxisAlignment.center,
 ),
               InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
               },
               child: const Text(
                 'Log In',

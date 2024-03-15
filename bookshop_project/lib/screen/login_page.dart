@@ -1,23 +1,22 @@
 import 'package:bookshop_project/screen/dashboard.dart';
-import 'package:bookshop_project/screen/login_page.dart';
 import 'package:bookshop_project/screen/sign_up.dart';
 import 'package:bookshop_project/utils/controllers.dart';
-import 'package:bookshop_project/utils/global_button.dart';
 import 'package:bookshop_project/utils/global_colors.dart';
 import 'package:bookshop_project/utils/social_logins.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../utils/text_form_global.dart';
 
 class LoginPage extends StatelessWidget {
+
+
+
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-
-    final controller = Get.put(SignUpController());
+final controller = Get.put(SignUpController());
     final formKey = GlobalKey<FormState>();
 
     return Scaffold(
@@ -31,11 +30,11 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   Image.asset(
-                     'assets/images/logo_two.png',
-                     fit: BoxFit.contain,
-                   ),
-                   const SizedBox(height: 41),
+                  Image.asset(
+                    'assets/images/logo_two.png',
+                    fit: BoxFit.contain,
+                  ),
+                  const SizedBox(height: 41),
                   // NAME CONTROLLER
                   const SizedBox(height: 16),
                   TextFormGlobal(
@@ -118,7 +117,7 @@ mainAxisAlignment: MainAxisAlignment.center,
 ),
               InkWell(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) =>  SignUpPage()));
               },
               child: const Text(
                 'Sign up',

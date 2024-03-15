@@ -34,36 +34,37 @@ Profile()
               child: screens[provider.index]
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: GlobalColors.buttonColorwhite,
+            //backgroundColor: GlobalColors.buttonColorwhite,
             currentIndex: provider.index,
-            selectedItemColor: GlobalColors.buttonColorOrange,
+            selectedItemColor: GlobalColors.buttonColorPurple,
             onTap: provider.changeIndex,
             items: [
               BottomNavigationBarItem(
                   icon: Image.asset(
-                      'assets/blush_icons/profile.png',
-                       color: Colors.grey,
-                      height: 38,
-                      width: 30,
-                  ),
-                  label: 'Profile'
-                    ),
-              const BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.home_filled,
-                    color: Colors.grey,
-                    size: 30,
+                      'assets/images/home_icon.png',
+                       color: Colors.black,
+                      height: 35,
+                      width: 35,
                   ),
                   label: 'Home'
+                    ),
+              BottomNavigationBarItem(
+                  icon: Image.asset(
+                    'assets/images/cart_icon.png',
+                    color: Colors.black,
+                    height: 35,
+                    width: 35,
+                  ),
+                  label: 'Cart'
               ),
               BottomNavigationBarItem(
                   icon: Image.asset(
-                    'assets/blush_icons/courses.png',
-                    color: Colors.grey,
-                    height: 38,
-                    width: 30,
+                    'assets/images/profile.png',
+                    color: Colors.black,
+                    height: 35,
+                    width: 35,
                   ),
-                  label: 'Courses'
+                  label: 'Profile'
               ),
             ],
           ),
