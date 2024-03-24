@@ -1,4 +1,3 @@
-import 'package:bookshop_project/utils/global_colors.dart';
 import 'package:flutter/material.dart';
 
 class SearchNotFound extends StatelessWidget {
@@ -6,9 +5,9 @@ class SearchNotFound extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+    return Center(
       child: Column(
+
         children: [
           SizedBox(
             width: 171,
@@ -29,22 +28,22 @@ class SearchNotFound extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 10),
-          Text(
-            "Try searching the course with",
+          const Text(
+            "Try searching with a",
             maxLines: 2,
             style: TextStyle(
-              color: GlobalColors.smallTextColorGrey,
+              color: Colors.black,
 
               fontWeight: FontWeight.normal,
               fontSize: 14,
             ),
           ),
           const SizedBox(height: 5),
-          Text(
-            "a different keyword",
+          const Text(
+            "different keyword",
             maxLines: 2,
             style: TextStyle(
-              color: GlobalColors.smallTextColorGrey,
+              color: Colors.black,
 
               fontWeight: FontWeight.normal,
               fontSize: 14,

@@ -18,7 +18,7 @@ class AuthenticationRepository extends GetxController {
   }
 
   _setInitialScreen(User? user) {
-    user == null ? Get.offAll(() =>  LoginPage()) : Get.offAll(() => const Dashboard());
+    user == null ? Get.offAll(() =>  const LoginPage()) : Get.offAll(() => const Dashboard());
     // If user exits and comes back to app and they are already logged in, redirect to home page
   }
 
@@ -27,7 +27,7 @@ class AuthenticationRepository extends GetxController {
     try {
       await _auth.createUserWithEmailAndPassword(email: email, password: password);
       // in the case that user has created an account successfully
-      firebaseUser.value != null ? Get.offAll(() => const Dashboard()) : Get.to(() =>  LoginPage());
+      firebaseUser.value != null ? Get.offAll(() => const Dashboard()) : Get.to(() =>  const LoginPage());
     } on FirebaseAuthException catch (e) {
       final exception = SignUpWithEmailAndPasswordFailure.code(e.code);
       print("FIREBASE AUTH EXCEPTION - ${exception.message}");

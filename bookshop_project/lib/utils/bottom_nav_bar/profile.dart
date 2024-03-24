@@ -14,21 +14,9 @@ class Profile extends StatelessWidget {
           onTap: () {
             Navigator.pop(context);
           },
-          child: Center(
-            child: Container(
-              height: 40,
-              width: 40,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                border: Border.all(
-                  color: Colors.grey,
-                ),
-              ),
-              child: const Icon(
-                CupertinoIcons.back,
-                color: Colors.black,
-              ),
-            ),
+          child: const Icon(
+            CupertinoIcons.back,
+            color: Colors.black,
           ),
         ),
         centerTitle: true,

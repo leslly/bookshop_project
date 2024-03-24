@@ -27,32 +27,21 @@ class ItemDesign extends StatelessWidget {
         callback(item);
       },
       child: Container(
-        height: 200,
+        height: 389,
         width: 150,
-        decoration: BoxDecoration(
-          border: Border.all(
-              // color: Colors.black,
-              // width: 1,
-              ),
-        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //IMAGE
             Flexible(
-              child: Container(
-                width: 150,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(17),
-                  border: Border.all(
-                    color: Colors.red,
-                    width: 2,
-                    style: BorderStyle.solid,
+              child: Center(
+                child: Container(
+                  width: 120,
+                  height: 250,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(17),
                   ),
-                ),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(17),
                   child: Image.asset(
                     item.image,
                     fit: BoxFit.fill,
@@ -60,26 +49,35 @@ class ItemDesign extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 5,
-            ),
             //TITLE
             Text(
               item.title,
               style: const TextStyle(
                 color: Colors.black,
-                fontSize: 11,
+                fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(
               height: 5,
             ),
+            Text(
+              item.description,
+              style: const TextStyle(
+                color: Colors.grey,
+                fontSize: 12,
+              ),
+              overflow: TextOverflow.ellipsis,
+              maxLines: 4,
+            ),
+const SizedBox(
+              height: 5,
+            ),
             //PRICE
             Text(
               '\u20a6${item.price.toStringAsFixed(2)}',
               style: const TextStyle(
-                fontSize: 13,
+                fontSize: 12,
                 fontWeight: FontWeight.bold,
                 color: Colors.black,
               ),

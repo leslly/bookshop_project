@@ -33,22 +33,24 @@ class _DashboardState extends State<Dashboard> {
 
   @override
   Widget build(BuildContext context) {
+
     return Consumer<IndexProvider>(builder: (context, provider, child) {
-      final items = _searchText.isEmpty
-          ? provider.items
-          : provider.items.isEmpty
-              ? []
-              : provider.items
-                  .where((e) =>
-                      e.title.toLowerCase().contains(_searchText.toLowerCase()))
-                  .toList();
+
+      final items = _searchText.isEmpty ? provider.items : provider.items.isEmpty
+              ? [] : provider.items.where((e) => e.title.toLowerCase().contains(_searchText.toLowerCase())).toList();
+
+int index = 0;
+final itemProvider =context.watch<IndexProvider>();
+
       return Scaffold(
         backgroundColor: Theme.of(context).colorScheme.surface,
         body: Padding(
-          padding: const EdgeInsets.all(25),
+          padding: const EdgeInsets.only(top: 32, left: 25, right: 25, bottom: 25),
           child: SingleChildScrollView(
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -59,9 +61,9 @@ class _DashboardState extends State<Dashboard> {
                         Row(
                           children: [
                             const Text(
-                              "Hi, ",
+                              "Hello, ",
                               style: TextStyle(
-                                fontSize: 15,
+                                fontSize: 14,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -71,14 +73,14 @@ class _DashboardState extends State<Dashboard> {
                               style: const TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
-                                fontSize: 15,
+                                fontSize: 14,
                               ),
                             ),
                             const SizedBox(
                               width: 10,
                             ),
                             Image.asset(
-                              'assets/images/emoji_teeth.png',
+                              'assets/images/hand_wave.png',
                               height: 25,
                               width: 25,
                             ),
@@ -89,6 +91,7 @@ class _DashboardState extends State<Dashboard> {
                           style: TextStyle(
                             fontSize: 15,
                             color: GlobalColors.linear,
+                            fontWeight: FontWeight.bold,
                           ),
                         )
                       ],
@@ -97,7 +100,7 @@ class _DashboardState extends State<Dashboard> {
                   InkWell(
                     onTap: () {
                       // go to cart
-                      const Cart();
+                       Cart(item: itemProvider.items[index]);
                     },
                     child: Container(
                       height: 28,
@@ -115,81 +118,64 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ],
               ),
-              const SizedBox(height: 15),
+              const SizedBox(height: 22),
 
               //SEARCH BAR
-              Container(
-                height: 36,
-                width: 257,
-                padding: const EdgeInsets.only(
-                    top: 0, left: 16, bottom: 0, right: 0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(45),
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 1,
-                  ),
-                ),
-                child: TextFormField(
-                  controller: searchController,
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: 'Search',
-                    hintStyle: const TextStyle(
-                      height: 1,
-                      fontSize: 14,
+              Center(
+                child: Container(
+                  height: 36,
+                  width: 257,
+                  padding: const EdgeInsets.only(
+                      top: 0, left: 16, bottom: 0, right: 0),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(45),
+                    border: Border.all(
+                      color: Colors.black,
+                      width: 1,
                     ),
-                    suffixIcon: InkWell(
-                        onTap: () {
-                          ////search for course
-                        },
-                        child: const Icon(CupertinoIcons.search)),
+                  ),
+                  child: TextFormField(
+                    controller: searchController,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Search',
+                      hintStyle: const TextStyle(
+                        height: 1,
+                        fontSize: 14,
+                      ),
+                      suffixIcon: InkWell(
+                          onTap: () {
+                            ////search for course
+                          },
+                          child: const Icon(CupertinoIcons.search)),
+                    ),
                   ),
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Container(
-                      // empty
-                      )),
-
-              const SizedBox(height: 20),
+              const Text(
+              'Recommendation',
+              style:TextStyle(
+              fontSize:20,
+              )
+              ),
 
               if (items.isEmpty)
                 const SearchNotFound()
               else
-                //GRID OF ITEMS
-                // ListView.separated(
-                //     shrinkWrap: true,
-                //       physics: const NeverScrollableScrollPhysics(),
-                //       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
-                //       itemBuilder: (context, index){
-                //         final item = items[index];
-                //         return ItemDesign(item: item, callback: (item){
-                //           //Navigate to your next screen using the course object
-                //           if(mounted) {
-                //             Navigator.push(context, MaterialPageRoute(builder: (context) => const ItemDesc()));
-                //           }
-                //         });
-                //       },
-                //       separatorBuilder: (context, index){
-                //         return const SizedBox(height: 14);
-                //       },
-                //       itemCount: items.length
-                //   ),
-
+//GRID OF ITEMS
                 GridView.builder(
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   // padding: const EdgeInsets.only(bottom: 100),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    mainAxisSpacing: 115,
+                    mainAxisSpacing: 20,
                     crossAxisSpacing: 30,
+                    mainAxisExtent:300
                   ),
                   // crossAxisSpacing -Gives space between the two columns
                   // due to somepadding whom i don'tknow where is, there is already space betwwen them
@@ -203,7 +189,7 @@ class _DashboardState extends State<Dashboard> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const ItemDesc(),
+                                builder: (context) =>  ItemDesc(item: item,),
                               ),
                             );
                           }

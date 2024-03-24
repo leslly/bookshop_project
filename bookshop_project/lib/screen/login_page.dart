@@ -1,8 +1,10 @@
 import 'package:bookshop_project/screen/dashboard.dart';
 import 'package:bookshop_project/screen/sign_up.dart';
+import 'package:bookshop_project/utils/bottom_nav_bar/index/index.dart';
 import 'package:bookshop_project/utils/controllers.dart';
 import 'package:bookshop_project/utils/global_colors.dart';
 import 'package:bookshop_project/utils/social_logins.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -62,7 +64,7 @@ final controller = Get.put(SignUpController());
                   const SizedBox(height: 16),
                 InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Dashboard()));
+                    Navigator.push(context, MaterialPageRoute(builder: (context) =>  const NavBar()));
                   },
                   child: Container(
                   alignment: Alignment.center,

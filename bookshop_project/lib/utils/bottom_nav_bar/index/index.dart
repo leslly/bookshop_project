@@ -18,13 +18,14 @@ class _NavBarState extends State<NavBar> {
 
   final screens = const [
 Dashboard(),
-Cart(),
+Profile(),//Cart(item:itemProvider.items[index]),
 Profile()
     // SettingsPage()
   ];
 
   @override
   Widget build(BuildContext context) {
+
     return Consumer<IndexProvider>(
       //The consumer provides change notifications to its listeners. It lets flutter know id does not
       //have to rebuild bar widget .
@@ -42,7 +43,7 @@ Profile()
               BottomNavigationBarItem(
                   icon: Image.asset(
                       'assets/images/home_icon.png',
-                       color: Colors.black,
+                      color: Colors.black,
                       height: 35,
                       width: 35,
                   ),
@@ -59,7 +60,7 @@ Profile()
               ),
               BottomNavigationBarItem(
                   icon: Image.asset(
-                    'assets/images/profile.png',
+                    'assets/images/twitter_icon.png',
                     color: Colors.black,
                     height: 35,
                     width: 35,
